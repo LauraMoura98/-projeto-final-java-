@@ -11,17 +11,7 @@ public class Garcom {
     private String sexo;
     private float salarioFixo;
 
-    public float getMediaSalario() {
-        return mediaSalario;
-    }
-
-    public void setMediaSalario(float mediaSalario) {
-        this.mediaSalario = mediaSalario;
-    }
-
-    private float mediaSalario;
-
-    public Garcom(float mediaSalario) {};
+    public Garcom() {};
 
     public Garcom(int id_garcom, String nome, String cpf, String dataNascimento, String email, String telefone, String sexo,
                   float salarioFixo) {
@@ -83,5 +73,6 @@ public class Garcom {
     public void setSalarioFixo(float salarioFixo) {
         this.salarioFixo = salarioFixo;
     }
+
 
 }

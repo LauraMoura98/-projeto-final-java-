@@ -28,6 +28,7 @@ public class ProjetoFinalDAO {
 
         stmt.execute();
         stmt.close();
+        
 
     }
 
@@ -93,6 +94,23 @@ public class ProjetoFinalDAO {
         if(resultado.next()) {
             double mediaSal = resultado.getDouble("MEDIA");
             System.out.println("A média dos salários é de: R$" + Math.round(mediaSal * 100.0) / 100.0);
+        }
+        resultado.close();
+        stmt.close();
+
+    }
+    
+    public static void QuantGarcons() throws Exception {
+        conexao = ConexaoDB.getInstance();
+
+        String sql = "SELECT COUNT(ID_GARCOM) AS QUANTIDADE FROM GARCOM;";
+
+        PreparedStatement stmt = conexao.prepareStatement(sql);
+        ResultSet resultado = stmt.executeQuery(sql);
+
+        if(resultado.next()) {
+            double QuantGarcons = resultado.getInt("QUANTIDADE");
+            System.out.println("Garçons Registrados:" + QuantGarcons );
         }
         resultado.close();
         stmt.close();

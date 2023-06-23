@@ -43,7 +43,7 @@ public class Main {
 
                     Garcom d = new Garcom(id_garcom,nome,cpf,dataNascimento,email,telefone,sexo,salarioFixo);
                     ProjetoFinalDAO.inserirGarcom(d);
-
+                    System.out.println("Garçom adicionado com sucesso!");
                     break;
 
                 case 2:
@@ -103,22 +103,28 @@ public class Main {
                 case 5:
                     System.out.println("OPÇÕES ADICIONAIS:");
                     System.out.println("1.MÉDIA DOS SALÁRIOS ");
+                    System.out.println("2.QUANTIDADE DE GARÇOMS REGISTRADOS ");
                     int salarioM = ler.nextInt();
 
                     if(salarioM == 1) {
-                        String name = "MEDIA";
                         ProjetoFinalDAO.MediaSalario();
+                    } else {
+                    	ProjetoFinalDAO.QuantGarcons();
                     }
                     break;
                 case 6:
                     System.out.println("Projeto Realizado por: LAURA MOURA SILVA (RA:972311036) E MIGUEL ALGUSTO DA SILVA COSTA (RA:972310324)");
                     break;
                 default:
-                    System.out.println("Digite uma opção válida! ");
+                    System.out.println("SELECIONE UMA OPÇÃO VÁLIDA! ");
             }
-
+            
             System.out.println("\nDESEJA CONTINUAR NO APLICATIVO?\n1.SIM\n2.NÃO ");
             continua = ler.nextInt();
+            
+            if(continua != 1 && continua != 2) {
+            	System.out.println("SELECIONE UMA OPÇÃO VÁLIDA! ");
+            }
         }
     }
 }

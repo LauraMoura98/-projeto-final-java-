@@ -15,7 +15,7 @@ public class ConexaoDB{
         try {
             String driverName = "com.mysql.cj.jdbc.Driver";
             Class.forName(driverName);
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+ fonte + "?useTimezone=true&serverTimezone=UTC" , "root", "N77Xl^m&5Kl8");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+ fonte + "?useTimezone=true&serverTimezone=UTC" , "root", "1234");
         }
 
         catch (SQLException e) {
